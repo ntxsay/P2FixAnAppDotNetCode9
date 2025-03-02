@@ -1,0 +1,51 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+@inject IViewLocalizer Localizer
+@model IEnumerable<P2FixAnAppDotNetCode9.Models.Product>
+
+@{
+    ViewBag.Title = Localizer["ProductList"];
+    Layout = "_Layout";
+}
+
+<br/>
+<div id="panel-body">
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+        <tr>
+            <th>
+                <label>@Localizer["Name"]</label>
+            </th>
+            <th>
+                <label>@Localizer["Description"]</label>
+            </th>
+            <th>
+                <label>@Localizer["Price"]</label>
+            </th>
+            <th>
+                <label>@Localizer["Stock"]</label>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Description</td>
+                <td style="text-align:center">@p.Price.ToString("c")</td>
+                <td style="text-align:center">@p.Stock</td>
+                <td>
+                    <form id="@p.Id" asp-action="AddToCart" asp-controller="Cart" method="post">
+                        <input type="hidden" name="id" value="@p.Id" />
+                        <button type="submit" class="btn btn-primary">
+                            @Localizer["AddToCart"]
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

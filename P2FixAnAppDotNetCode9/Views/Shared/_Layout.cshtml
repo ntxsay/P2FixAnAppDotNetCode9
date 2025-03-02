@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - P2FixAnAppDotNetCode9</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet"
+          asp-href-include="/lib/bootstrap-old/dist/**/*.min.css"
+          asp-href-exclude="**/*-reboot*,**/*-grid*" />
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>*@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/P2FixAnAppDotNetCode9.styles.css" asp-append-version="true"/>
+</head>
+<body>
+<div class="navbar navbar-inverse bg-primary" role="navigation">
+    <div class="row">
+        <a class="col navbar-brand" asp-action="Index" asp-controller="Product" style="padding-left:12%">
+            OpenClassrooms shop
+        </a>
+        <div class="col-4 text-right" style="padding-right:12%">
+            @await Component.InvokeAsync("CartSummary")
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
+    <footer>
+        <div class="row">
+            <div class="col-8"><p style="padding-top:17px">&copy; 2025 - P2FixAnAppDotNetCode9</p></div>
+            <div class="col-4">
+                @await Component.InvokeAsync("LanguageSelector")
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
