@@ -37,9 +37,16 @@ namespace P2FixAnAppDotNetCode9.Tests
 
             productService.UpdateProductQuantities(cart);
 
-            Assert.Equal(9, products.First(p => p.Id == 1).Stock);
-            Assert.Equal(28, products.First(p => p.Id == 3).Stock);
-            Assert.Equal(47, products.First(p => p.Id == 5).Stock);
+            var productIdStock = new Dictionary<int, int>()
+            {
+                { 1, products.First(p => p.Id == 1).Stock },
+                { 3, products.First(p => p.Id == 3).Stock },
+                { 5, products.First(p => p.Id == 5).Stock }
+            };
+            
+            Assert.Equal(9, productIdStock.GetValueOrDefault(1));
+            Assert.Equal(28, productIdStock.GetValueOrDefault(3));
+            Assert.Equal(47, productIdStock.GetValueOrDefault(5));
 
             //do a second run adding items to cart. Resetting the repo and service and cart
             //will simulate the process from the front end perspective
@@ -48,13 +55,23 @@ namespace P2FixAnAppDotNetCode9.Tests
             productRepository = new ProductRepository();
             productService = new ProductService(productRepository, orderRepository);
             products = productService.GetAllProducts();
-            cart.AddItem(products.Where(p => p.Id == 1).First(), 1);
-            cart.AddItem(products.Where(p => p.Id == 3).First(), 2);
-            cart.AddItem(products.Where(p => p.Id == 5).First(), 3);
+
+            products.First(p => p.Id == 1).Stock = productIdStock.GetValueOrDefault(1);
+            products.First(p => p.Id == 3).Stock = productIdStock.GetValueOrDefault(3);
+            products.First(p => p.Id == 5).Stock = productIdStock.GetValueOrDefault(5);
+            
+            cart.AddItem(products.First(p => p.Id == 1), 1);
+            cart.AddItem(products.First(p => p.Id == 3), 2);
+            cart.AddItem(products.First(p => p.Id == 5), 3);
             productService.UpdateProductQuantities(cart);
-            Assert.Equal(8, products.Where(p => p.Id == 1).First().Stock);
-            Assert.Equal(26, products.Where(p => p.Id == 3).First().Stock);
-            Assert.Equal(44, products.Where(p => p.Id == 5).First().Stock);
+
+            productIdStock[1] = products.First(p => p.Id == 1).Stock;
+            productIdStock[3] = products.First(p => p.Id == 3).Stock;
+            productIdStock[5] = products.First(p => p.Id == 5).Stock;
+            
+            Assert.Equal(8, productIdStock.GetValueOrDefault(1));
+            Assert.Equal(26, productIdStock.GetValueOrDefault(3));
+            Assert.Equal(44, productIdStock.GetValueOrDefault(5));
         }
 
         [Fact]

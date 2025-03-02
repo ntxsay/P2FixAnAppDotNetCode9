@@ -41,7 +41,7 @@
         public void UpdateProductStocks(int productId, int quantityToRemove)
         {
             Product product = _products.First(p => p.Id == productId);
-            product.Stock = product.Stock - quantityToRemove;
+            product.Stock -= quantityToRemove;
 
             if (product.Stock == 0)
                 _products.Remove(product);
