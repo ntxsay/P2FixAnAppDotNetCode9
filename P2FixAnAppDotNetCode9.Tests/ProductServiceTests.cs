@@ -19,9 +19,7 @@ namespace P2FixAnAppDotNetCode9.Tests
 
             var products = productService.GetAllProducts();
 
-            //Assert.IsType<List<Product>>(products);
-            Assert.IsType<Product[]>(products);
-
+            Assert.IsType<List<Product>>(products);
         }
 
         [Fact]
@@ -33,15 +31,15 @@ namespace P2FixAnAppDotNetCode9.Tests
             IProductService productService = new ProductService(productRepository, orderRepository);
 
             IEnumerable<Product> products = productService.GetAllProducts();
-            cart.AddItem(products.Where(p => p.Id == 1).First(), 1);
-            cart.AddItem(products.Where(p => p.Id == 3).First(), 2);
-            cart.AddItem(products.Where(p => p.Id == 5).First(), 3);
+            cart.AddItem(products.First(p => p.Id == 1), 1);
+            cart.AddItem(products.First(p => p.Id == 3), 2);
+            cart.AddItem(products.First(p => p.Id == 5), 3);
 
             productService.UpdateProductQuantities(cart);
 
-            Assert.Equal(9, products.Where(p => p.Id == 1).First().Stock);
-            Assert.Equal(28, products.Where(p => p.Id == 3).First().Stock);
-            Assert.Equal(47, products.Where(p => p.Id == 5).First().Stock);
+            Assert.Equal(9, products.First(p => p.Id == 1).Stock);
+            Assert.Equal(28, products.First(p => p.Id == 3).Stock);
+            Assert.Equal(47, products.First(p => p.Id == 5).Stock);
 
             //do a second run adding items to cart. Resetting the repo and service and cart
             //will simulate the process from the front end perspective

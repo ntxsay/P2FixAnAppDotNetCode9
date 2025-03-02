@@ -2,7 +2,7 @@
 {
     public interface IProductService
     {
-        Product[] GetAllProducts();
+        List<Product> GetAllProducts();
         Product GetProductById(int id);
         void UpdateProductQuantities(Cart cart);
     }
