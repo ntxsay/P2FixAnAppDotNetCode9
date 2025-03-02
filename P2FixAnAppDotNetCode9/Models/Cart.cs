@@ -8,7 +8,7 @@
         /// <summary>
         /// Liste actuelle des paniers
         /// </summary>
-        private readonly List<CartLine> _cartLinesList = new List<CartLine>();
+        private readonly List<CartLine> _cartLinesList = [];
         
         /// <summary>
         /// Read-only property for dispaly only
@@ -55,7 +55,13 @@
         /// <summary>
         /// Get average value of a cart
         /// </summary>
-        public double GetAverageValue() => _cartLinesList.Select(s => s.Product.Price).Average();
+        public double GetAverageValue()
+        {
+            return _cartLinesList.Count == 0
+                ? 0d
+                : _cartLinesList.Select(s => s.Product.Price * s.Quantity).Sum() /
+                  _cartLinesList.Select(s => s.Quantity).Sum();
+        }
 
         /// <summary>
         /// Looks after a given product in the cart and returns if it finds it
