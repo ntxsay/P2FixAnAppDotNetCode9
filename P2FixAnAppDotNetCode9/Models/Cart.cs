@@ -70,7 +70,7 @@
         /// </summary>
         public Product? FindProductInCartLines(int productId)
         {
-            return _cartLinesList.FirstOrDefault(l => l.Product.Id == productId)?.Product;
+            return _cartLinesList.SingleOrDefault(l => l.Product.Id == productId)?.Product;
         }
 
         /// <summary>
