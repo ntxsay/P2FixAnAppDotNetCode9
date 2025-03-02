@@ -29,14 +29,12 @@ namespace P2FixAnAppDotNetCode9.Controllers
             }
             if (ModelState.IsValid)
             {
-                order.Lines = (_cart as Cart)?.Lines.ToArray();
+                order.Lines = (_cart as Cart)?.Lines.ToArray() ?? [];
                 _orderService.SaveOrder(order);
                 return RedirectToAction(nameof(Completed));
             }
-            else
-            {
-                return View(order);
-            }
+
+            return View(order);
         }
 
         public ViewResult Completed()

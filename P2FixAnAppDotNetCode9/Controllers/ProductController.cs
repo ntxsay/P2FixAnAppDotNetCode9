@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using P2FixAnAppDotNetCode9.Models;
 using P2FixAnAppDotNetCode9.Models.Services;
 
 namespace P2FixAnAppDotNetCode9.Controllers
