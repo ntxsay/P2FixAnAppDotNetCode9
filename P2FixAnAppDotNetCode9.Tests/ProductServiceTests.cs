@@ -82,8 +82,9 @@ namespace P2FixAnAppDotNetCode9.Tests
             IProductService productService = new ProductService(productRepository, orderRepository);
             int id = 3;
 
-            Product product = productService.GetProductById(id);
+            var product = productService.GetProductById(id);
 
+            Assert.NotNull(product);
             Assert.Same("JVC HAFX8R Headphone", product.Name);
             Assert.Equal(69.99, product.Price);
         }

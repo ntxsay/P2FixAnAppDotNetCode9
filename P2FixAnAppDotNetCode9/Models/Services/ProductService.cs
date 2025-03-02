@@ -27,10 +27,9 @@ namespace P2FixAnAppDotNetCode9.Models.Services
         /// <summary>
         /// Get a product form the inventory by its id
         /// </summary>
-        public Product GetProductById(int id)
+        public Product? GetProductById(int id)
         {
-            // TODO implement the method
-            return null;
+            return _productRepository.GetProductById(id);
         }
 
         /// <summary>

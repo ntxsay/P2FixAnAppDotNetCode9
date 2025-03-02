@@ -23,22 +23,20 @@ namespace P2FixAnAppDotNetCode9.Controllers
         [HttpPost]
         public RedirectToActionResult AddToCart(int id)
         {
-            Product product = _productService.GetProductById(id);
+            Product? product = _productService.GetProductById(id);
 
             if (product != null)
             {
                 _cart.AddItem(product, 1);
                 return RedirectToAction("Index");
             }
-            else
-            {
-                return RedirectToAction("Index", "Product");
-            }
+
+            return RedirectToAction("Index", "Product");
         }
 
         public RedirectToActionResult RemoveFromCart(int id)
         {
-            Product product = _productService.GetAllProducts()
+            Product? product = _productService.GetAllProducts()
                 .FirstOrDefault(p => p.Id == id);
 
             if (product != null)
