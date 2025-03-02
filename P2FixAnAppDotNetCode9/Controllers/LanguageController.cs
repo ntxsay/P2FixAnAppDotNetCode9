@@ -17,7 +17,7 @@ namespace P2FixAnAppDotNetCode9.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ChangeUiLanguage(LanguageViewModel model, string returnUrl)
         {
-            if (model.Language != null)
+            if (!string.IsNullOrEmpty(model.Language) && !string.IsNullOrWhiteSpace(model.Language))
             {
                 _languageService.ChangeUiLanguage(HttpContext, model.Language);
             }
