@@ -50,7 +50,9 @@
         /// <summary>
         /// Get total value of a cart
         /// </summary>
-        public double GetTotalValue() => _cartLinesList.Select(s => s.Product.Price).Sum();
+        public double GetTotalValue() => _cartLinesList.Count == 0 
+            ? 0d
+            : _cartLinesList.Select(s => s.Product.Price * s.Quantity).Sum();
 
         /// <summary>
         /// Get average value of a cart
