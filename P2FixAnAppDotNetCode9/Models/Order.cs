@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace P2FixAnAppDotNetCode9.Models
 {
@@ -7,7 +8,9 @@ namespace P2FixAnAppDotNetCode9.Models
     {
         [BindNever]
         public int OrderId { get; set; }
+        
         [BindNever]
+        [ValidateNever]
         public ICollection<CartLine> Lines { get; set; }
 
         [Required(ErrorMessage = "ErrorMissingName")]
