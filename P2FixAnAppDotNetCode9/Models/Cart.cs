@@ -21,23 +21,23 @@
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            if (quantity <= 0)
-                return;
-            
-            var cartLine = _cartLinesList.SingleOrDefault(f => f.Product.Id == product.Id);
-            if (cartLine == null)
+            if (quantity > 0)
             {
-                cartLine = new CartLine()
+                var cartLine = _cartLinesList.SingleOrDefault(f => f.Product.Id == product.Id);
+                if (cartLine == null)
                 {
-                    Product = product,
-                    Quantity = quantity
-                };
+                    cartLine = new CartLine()
+                    {
+                        Product = product,
+                        Quantity = quantity
+                    };
                 
-                _cartLinesList.Add(cartLine);
-            }
-            else
-            {
-                cartLine.Quantity += quantity;
+                    _cartLinesList.Add(cartLine);
+                }
+                else
+                {
+                    cartLine.Quantity += quantity;
+                }
             }
         }
 
@@ -57,13 +57,11 @@
         /// <summary>
         /// Get average value of a cart
         /// </summary>
-        public double GetAverageValue()
-        {
-            return _cartLinesList.Count == 0
+        public double GetAverageValue() =>
+            _cartLinesList.Count == 0
                 ? 0d
                 : _cartLinesList.Select(s => s.Product.Price * s.Quantity).Sum() /
                   _cartLinesList.Select(s => s.Quantity).Sum();
-        }
 
         /// <summary>
         /// Looks after a given product in the cart and returns if it finds it
