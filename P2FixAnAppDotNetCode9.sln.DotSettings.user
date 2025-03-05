@@ -1,0 +1,27 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AEqualityAsserts_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fad8b2779652854276d03ec153d51377686c7193799d1688e119272770d0cf_003FEqualityAsserts_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AIdentityAsserts_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fc8e0598cfeaea9d5bb7f81372743f156c5dba93342ec6d40bd66c9ea326fcc_003FIdentityAsserts_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AWebApplicationBuilder_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F504c8bdd5124a1bbe189b9d9082277bdbfeff4c69af26aa899960a929e99_003FWebApplicationBuilder_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2f332a31_002D6143_002D4a3a_002D81cd_002D49c013d6a063/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddItemInCart" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::9F3E6DEA-B606-490D-BBE2-F3D92859B436::net9.0::P2FixAnAppDotNetCode9.Tests.CartTests.AddItemInCart&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9F3E6DEA-B606-490D-BBE2-F3D92859B436::net9.0::P2FixAnAppDotNetCode9.Tests.CartTests.GetAverageValue&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9F3E6DEA-B606-490D-BBE2-F3D92859B436::net9.0::P2FixAnAppDotNetCode9.Tests.CartTests.GetTotalValue&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9F3E6DEA-B606-490D-BBE2-F3D92859B436::net9.0::P2FixAnAppDotNetCode9.Tests.CartTests.FindProductInCartLines&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9F3E6DEA-B606-490D-BBE2-F3D92859B436::net9.0::P2FixAnAppDotNetCode9.Tests.ProductServiceTests.Product&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9F3E6DEA-B606-490D-BBE2-F3D92859B436::net9.0::P2FixAnAppDotNetCode9.Tests.ProductServiceTests.UpdateProductQuantities&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9F3E6DEA-B606-490D-BBE2-F3D92859B436::net9.0::P2FixAnAppDotNetCode9.Tests.ProductServiceTests.GetProductById&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9F3E6DEA-B606-490D-BBE2-F3D92859B436::net9.0::P2FixAnAppDotNetCode9.Tests.LanguageServiceTests.SetCulture&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FControllers_002FOrderController/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FModels_002FOrder/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FModels_002FViewModels_002FLanguageViewModel/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FModels_002FViewModels_002FOrder/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FViews_002FCart_002FIndex/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FViews_002FOrder_002FCompleted/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FViews_002FOrder_002FIndex/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FViews_002FProduct_002FIndex/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FViews_002FShared_002FComponents_002FCartSummary_002FDefault/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=P2FixAnAppDotNetCode9_002FResources_002FViews_002FShared_002FComponents_002FLanguageSelector_002FDefault/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>
