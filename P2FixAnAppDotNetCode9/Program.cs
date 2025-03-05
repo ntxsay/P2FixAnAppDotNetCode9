@@ -31,13 +31,13 @@ public class Program
         { 
             var supportedCultures = new List<CultureInfo>
             {
-                new("en-GB"),
-                new("en-US"),
-                new("en"),
                 new("fr-FR"),
                 new("fr"),
                 new ("es-ES"),
-                new ("es")
+                new ("es"),
+                new("en-GB"),
+                new("en-US"),
+                new("en")
             };
 
             opts.DefaultRequestCulture = new RequestCulture("en");
