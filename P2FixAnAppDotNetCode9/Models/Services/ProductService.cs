@@ -38,14 +38,9 @@ namespace P2FixAnAppDotNetCode9.Models.Services
         public void UpdateProductQuantities(Cart cart)
         {
             var lines = cart.Lines.ToArray();
-            if (lines.Length == 0)
-                return;
-
-            foreach (var group in lines.GroupBy(g => g.Product))
-            {
-                var productId = group.Key.Id;
-                _productRepository.UpdateProductStocks(productId, group.Select(s => s.Quantity).Sum());
-            }
+            if (lines.Length > 0)
+                foreach (var item in lines) 
+                    _productRepository.UpdateProductStocks(item.Product.Id, item.Quantity);
         }
     }
 }
