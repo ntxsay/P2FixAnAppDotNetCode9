@@ -6,7 +6,7 @@
     public class Cart : ICart
     {
         /// <summary>
-        /// Liste actuelle des paniers
+        /// Liste actuelle des produits du panier
         /// </summary>
         private readonly List<CartLine> _cartLinesList = [];
         
@@ -66,10 +66,8 @@
         /// <summary>
         /// Looks after a given product in the cart and returns if it finds it
         /// </summary>
-        public Product? FindProductInCartLines(int productId)
-        {
-            return _cartLinesList.SingleOrDefault(l => l.Product.Id == productId)?.Product;
-        }
+        public Product? FindProductInCartLines(int productId) => 
+            _cartLinesList.SingleOrDefault(l => l.Product.Id == productId)?.Product;
 
         /// <summary>
         /// Get a specifid cartline by its index
