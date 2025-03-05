@@ -36,6 +36,8 @@ public class Program
                 new("en"),
                 new("fr-FR"),
                 new("fr"),
+                new ("es-ES"),
+                new ("es")
             };
 
             opts.DefaultRequestCulture = new RequestCulture("en");
