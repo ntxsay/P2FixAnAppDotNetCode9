@@ -39,8 +39,8 @@
         /// </summary>
         public Product[] GetAllProducts()
         {
-            List<Product> list = _products.Where(p => p.Stock > 0).OrderBy(p => p.Name).ToList();
-            return list.ToArray();
+            var products = _products.Where(p => p.Stock > 0).OrderBy(p => p.Name).ToArray();
+            return products;
         }
 
         /// <summary>
