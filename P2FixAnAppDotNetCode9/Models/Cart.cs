@@ -57,11 +57,21 @@
         /// <summary>
         /// Get average value of a cart
         /// </summary>
-        public double GetAverageValue() =>
-            _cartLinesList.Count == 0
-                ? 0d
-                : _cartLinesList.Select(s => s.Product.Price * s.Quantity).Sum() /
-                  _cartLinesList.Select(s => s.Quantity).Sum();
+        public double GetAverageValue()
+        {
+            if (_cartLinesList.Count == 0)
+                return 0d;
+
+            var totalQuantity = _cartLinesList.Select(s => s.Quantity).Sum();
+            if (totalQuantity == 0)
+                return 0d;
+
+            var totalPriceProducts = _cartLinesList.Select(s => s.Product.Price * s.Quantity).Sum();
+            if (totalPriceProducts == 0)
+                return 0d;
+            
+            return totalPriceProducts / totalQuantity;
+        }
 
         /// <summary>
         /// Looks after a given product in the cart and returns if it finds it
