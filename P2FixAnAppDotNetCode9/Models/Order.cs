@@ -23,6 +23,7 @@ namespace P2FixAnAppDotNetCode9.Models
         public string City { get; set; }
 
         [Required(ErrorMessage = "ErrorMissingZip")]
+        [DataType(DataType.PostalCode)]
         public string Zip { get; set; }
 
         [Required(ErrorMessage = "ErrorMissingCountry")]
